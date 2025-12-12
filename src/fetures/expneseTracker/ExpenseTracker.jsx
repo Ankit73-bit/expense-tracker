@@ -1,5 +1,11 @@
+import Month from "../month/Month";
+
 function ExpenseTracker() {
-  return <div>ExpenseTracker</div>;
+  return (
+    <>
+      <Month />
+    </>
+  );
 }
 
 export default ExpenseTracker;
