@@ -1,13 +1,17 @@
-import { useState } from "react";
 import { months } from "../../utils/constant";
+import { useMonth } from "./MonthContext";
 
 function Month() {
-  const today = new Date();
-  const [month, setMonth] = useState(months[today.getMonth()]);
+  const { state, dispatch } = useMonth();
 
   return (
     <>
-      <select onChange={(e) => setMonth(e.target.value)} value={month}>
+      <select
+        onChange={(e) =>
+          dispatch({ type: "SET_MONTH", payload: e.target.value })
+        }
+        value={state.month}
+      >
         {months.map((mon, i) => {
           return (
             <option key={i} value={mon}>
