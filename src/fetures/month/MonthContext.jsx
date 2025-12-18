@@ -1,5 +1,5 @@
 import { createContext, useContext, useReducer } from "react";
-import { months } from "../../utils/constant";
+import { months, weeks } from "../../utils/constant";
 
 const MonthContext = createContext();
 
@@ -7,7 +7,7 @@ const today = new Date();
 const initialState = {
   month: months[today.getMonth()],
   date: today.getDate(),
-  day: today.getDay(),
+  day: today.getDay() === 0 ? "Monday" : weeks[today.getDay() - 1],
   year: today.getFullYear(),
 };
 
