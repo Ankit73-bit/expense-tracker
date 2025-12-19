@@ -1,13 +1,13 @@
 import Month from "../month/Month";
 import Balance from "../balance/Balance";
 import Transactions from "../transaction/Transactions";
-import Profile from "../user/Profile";
+import User from "../user/User";
 
 function ExpenseTracker() {
   return (
     <>
       <div>
-        <Profile />
+        <User />
       </div>
       {/* <div>
         <Balance />
