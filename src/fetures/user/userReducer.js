@@ -12,13 +12,19 @@ const initialState = {
   transactionId: "",
   isActive: false,
   isLoggedIn: false,
+  createdAt: new Date().toISOString(),
 };
 
 function userReducer(state, action) {
   switch (action.type) {
     case "Signup":
-      return {};
+      return {
+        ...state,
+        ...action.payload,
+        id: uuidV4(),
+        transactionId: uuidV4(),
+      };
     default:
-      initialState;
+      return state;
   }
 }
